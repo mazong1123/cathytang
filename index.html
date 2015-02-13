@@ -1,14 +1,246 @@
 ﻿<!DOCTYPE html>
 <html>
-
-  <head>
+<head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
     <title>This is for Cathy Tang</title>
-  </head>
+    <style type="text/css">
+        body {
+            background: #ccc;
+            font-family: 'Microsoft YaHei';
+        }
 
-  <body>
+        #magazine {
+            width: 1152px;
+            height: 752px;
+        }
 
-  </body>
+            #magazine .turn-page {
+                background-color: #ccc;
+                background-size: 100% 100%;
+            }
+    </style>
+    <script src="javascripts/jquery.js"></script>
+    <script src="javascripts/turn.min.js"></script>
+    <script>
+        $(window).ready(function () {
+            $('#magazine').turn({
+                display: 'double',
+                acceleration: true,
+                gradients: !$.isTouch,
+                elevation: 50,
+                when: {
+                    turned: function (e, page) {
+                        /*console.log('Current view: ', $(this).turn('view'));*/
+                    }
+                }
+            });
+        });
+
+
+        $(window).bind('keydown', function (e) {
+
+            if (e.keyCode == 37)
+                $('#magazine').turn('previous');
+            else if (e.keyCode == 39)
+                $('#magazine').turn('next');
+
+        });
+    </script>
+</head>
+<body>
+    <audio src="gn.mp3" autoplay loop style="display:none;"></audio>
+    <div id="magazine">
+        <div style="background-color:white; text-align:center;">
+            <h1>Cathy Tang's Book</h1>
+            <img src="images/1.png" />
+            <p>Authored by mazong1123, with love</p>
+            <p>2015.2.14</p>
+            <p><strong>For iPad, flip the book on the bottom right corner or top right corner.</strong></p>
+            <p><strong>For PC, press LEFT or RIGHT button.</strong></p>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/0.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2013年10月25日, 马桑溪</h1>
+            <h3>一切的开端。</h3>
+            <h3>这么美没人不动心好吗!</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/05.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2013年11月9日, 丰岩水库</h1>
+            <h3>第一次驱车郊游</h3>
+            <h3>微博关键词: "有情况"</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/4.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2013年11月24日, 工商大学</h1>
+            <h3>正式确立relationship后的第一次郊游</h3>
+            <h3>那天很热。。。</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/2.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2013年12月1日, 西南大学</h1>
+            <h3>爬缙云山之前,拍于西南大学</h3>
+            <h3>简直模特</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/3.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2013年12月7日, 重庆一中</h1>
+            <h3>重返一中, 拍于四二一广场</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/6.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2014年1月25日, 李家沱青岩子隧道旁</h1>
+            <h3>心系雾霾。。。</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/10.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2014年2月23日, 十八梯</h1>
+            <h3>应mazong1123的要求剪成了妹妹头</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/7.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2014年3月9日, 大观</h1>
+            <h3>暴发户带女学生回家的节奏</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/8.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2014年3月23日, 巴滨路</h1>
+            <h3>Pic of Year.</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/9.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2014年3月29日, 洛jie</h1>
+            <h3>摘草莓的小姑娘~</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/11.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2014年4月27日, 南京邮电大学</h1>
+            <h3>我来到，你的城市，走过你来时的路~</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/12.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2014年5月2日, 松溉古镇</h1>
+            <h3>Cathy Tang 家电脑桌面~</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/13.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2014年5月11日, 云转山</h1>
+            <h3>初夏精灵...(口水口水)</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/14.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2014年5月18日, 山间小路</h1>
+            <h3>笑得之灿烂>_<</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/15.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2014年6月7日, 华生园梦幻城堡</h1>
+            <h3>淘宝卖家秀</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/16.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2014年7月27日, 天星寺</h1>
+            <h3>银河下的姿势。。在干啥呢？</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/17.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2014年8月14日, 太平坝</h1>
+            <h3>阿拉伯妇女与云海</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/18.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2014年9月21日, 走马</h1>
+            <h3>真·唐仙女儿</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/19.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2014年10月2日, 神女湖</h1>
+            <h3>女神范er</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/20.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2014年10月6日, 鹅岭</h1>
+            <h3>又见剪刀手</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/24.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2014年11月29日, 李家沱</h1>
+            <h3>我觉得踢个几十几百年的没问题</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/22.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2014年12月7日, 鸿恩寺</h1>
+            <h3>结果路边的银杏比山上多。。。</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/23.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2014年12月21日, 照母山</h1>
+            <h3>走了半个照母山就快5点啦>_<</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/25.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h1>2015年1月18日, 马桑溪</h1>
+            <h3>故地重游，庆祝从2013->2015</h3>
+        </div>
+        <div style="background-color: white; text-align: center;">
+            <img src="images/26.png" style="padding:10px; width:90%; " />
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px;">
+            <h2>无论你开心，难过或生气，我都有想抱住你的冲动</h2>
+            <h2>而这种冲动，将伴随一生</h2>
+        </div>
+        <div style="background-color: white; padding-left: 10px; padding-right: 10px; text-align:center;">
+            <h1>Happy Valentine's Day!</h1>
+        </div>
+    </div>
+</body>
 </html>
